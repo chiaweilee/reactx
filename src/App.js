@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+const Slogen = function (props) {
+  return <div>{props.word}</div>;
+};
+
+const Null = function () {
+  return null;
+};
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -12,19 +20,27 @@ class App extends Component {
   }
 
   say() {
-    return `${this.props.hello} ${this.state.name}!`;
+    return `${this.props.hello} ${this.state.name.toUpperCase()}!`;
   }
 
   alert() {
-    // eslint-disable-next-line
-    alert(this.say());
+    this.setState((state) => ({
+      name: state.name + ' World',
+    }));
+  }
+
+  componentWillMount() {
+  }
+
+  componentDidMount() {
   }
 
   render() {
     return (
       <div className="App">
         <header className="App-header" onClick={this.alert}>
-          {this.say()}
+          <Null />
+          <Slogen word={this.say()} />
         </header>
       </div>
     );
