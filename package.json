@@ -16,7 +16,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint --ext .js,.jsx,.json src --fix"
+    "lint": "eslint --ext .js,.jsx,.json src --fix",
+    "dist": "rundist --dirname build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,6 +30,7 @@
   ],
   "devDependencies": {
     "eslint-config-ali": "^4.1.0",
-    "react-devtools": "^3.5.1"
+    "react-devtools": "^3.5.1",
+    "rundist": "^0.2.3"
   }
 }
